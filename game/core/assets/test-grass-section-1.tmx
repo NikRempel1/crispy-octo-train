@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0.0" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="32" tileheight="32" nextobjectid="11">
+ <tileset firstgid="1" source="test-tileset.tsx"/>
+ <layer name="ground" width="8" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAPmNAwNQAzAfMYkTAheXT3MaHJE8IAENQAKw==
+  </data>
+ </layer>
+ <layer name="background" width="8" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYWBgYMGD0QE+tcRiQuaRIk8pAABeQACN
+  </data>
+ </layer>
+ <objectgroup name="ground">
+  <object id="7" x="0" y="192" width="256" height="64"/>
+  <object id="8" x="160" y="96" width="96" height="128"/>
+  <object id="9" x="0" y="32" width="128" height="32"/>
+  <object id="10" x="426" y="115"/>
+ </objectgroup>
+</map>
