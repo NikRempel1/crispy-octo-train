@@ -47,21 +47,26 @@ public class PlayScreen implements Screen {
 	private Command command;
 	
 	public PlayScreen(MyGdxGame game) {
+		B2WorldCreator b2wc;
+		
 		this.game = game;
 		gamecam = new OrthographicCamera();
 		gamePort = new StretchViewport(MyGdxGame.V_WIDTH / MyGdxGame.PPM, MyGdxGame.V_HEIGHT/ MyGdxGame.PPM, gamecam);
 		hud = new Hud(game.batch);
 		
-		mapLoader = new TmxMapLoader();
-		map = mapLoader.load("test.tmx");
-		renderer = new OrthogonalTiledMapRenderer(map, 1 / MyGdxGame.PPM);
 		
-		gamecam.position.set(gamePort.getWorldWidth()/2, gamePort.getWorldHeight()/2, 0);
 		
 		world = new World(new Vector2(0, -9.8f), true);
 		b2dr = new Box2DDebugRenderer();
 		
-		new B2WorldCreator(world, map);
+		b2wc = new B2WorldCreator(world);
+		
+		mapLoader = new TmxMapLoader();
+		map = b2wc.GetTextures();
+		renderer = new OrthogonalTiledMapRenderer(map, 1 / MyGdxGame.PPM);
+		
+		gamecam.position.set(gamePort.getWorldWidth()/2, gamePort.getWorldHeight()/2, 0);
+		
 		player = new Player(world);
 		input = new InputHandler();
 		

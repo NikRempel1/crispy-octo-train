@@ -19,7 +19,8 @@ public abstract class GameActor {
 	}
 	
 	public void Jump(){
-		body.applyLinearImpulse(new Vector2(0, 4f), body.getWorldCenter(), true);
+		//body.applyLinearImpulse(new Vector2(0, 4f), body.getWorldCenter(), true);
+		body.setLinearVelocity(body.getLinearVelocity().x, 4f);
 	}
 	
 	public void MoveRight(){
@@ -31,6 +32,8 @@ public abstract class GameActor {
 		if(body.getLinearVelocity().x >= -2)
 			body.applyLinearImpulse(new Vector2(-0.1f, 0), body.getWorldCenter(), true);
 	}
+	
+	public void Attack(){}
 	
 	public Vector2 getPosition(){
 		return body.getWorldCenter();
